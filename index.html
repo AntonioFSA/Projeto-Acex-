@@ -427,10 +427,27 @@
 
       <div class="quiz-box">
         <div class="quiz-start" id="quizStart">
-          <p>O quiz possui 10 perguntas de múltipla escolha sobre golpes digitais e boas práticas
-            de segurança. Ao final, você verá sua pontuação e um comentário sobre seu nível de
-            preparo.</p>
-          <button type="button" class="btn btn-primary" id="quizStartBtn">Começar quiz</button>
+          <p>Escolha um nível de dificuldade para começar. Cada nível tem um conjunto próprio de
+            perguntas sobre golpes digitais e boas práticas de segurança. Ao final, você recebe uma
+            devolutiva educativa detalhada sobre o seu desempenho.</p>
+
+          <div class="quiz-difficulty" role="group" aria-labelledby="quizDifficultyTitle">
+            <p class="quiz-difficulty-title" id="quizDifficultyTitle">Nível de dificuldade</p>
+            <div class="quiz-difficulty-options">
+              <button type="button" class="quiz-difficulty-btn is-facil" data-level="facil">
+                <span class="quiz-difficulty-name">Fácil</span>
+                <span class="quiz-difficulty-desc">Conceitos básicos de segurança digital.</span>
+              </button>
+              <button type="button" class="quiz-difficulty-btn is-medio" data-level="medio">
+                <span class="quiz-difficulty-name">Médio</span>
+                <span class="quiz-difficulty-desc">Situações comuns de golpes do dia a dia.</span>
+              </button>
+              <button type="button" class="quiz-difficulty-btn is-dificil" data-level="dificil">
+                <span class="quiz-difficulty-name">Difícil</span>
+                <span class="quiz-difficulty-desc">Cenários mais sofisticados e enganosos.</span>
+              </button>
+            </div>
+          </div>
         </div>
 
         <form class="quiz-question" id="quizQuestion" hidden>
@@ -448,9 +465,26 @@
 
         <div class="quiz-result" id="quizResult" hidden role="status" aria-live="polite">
           <h3>Resultado</h3>
+          <p class="quiz-level-label" id="quizLevelLabel"></p>
+
+          <div class="quiz-score-bar" aria-hidden="true">
+            <div class="quiz-score-bar-fill" id="quizScoreBarFill"></div>
+          </div>
           <p class="quiz-score" id="quizScore"></p>
           <p class="quiz-message" id="quizMessage"></p>
-          <button type="button" class="btn btn-outline" id="quizRestartBtn">Refazer o quiz</button>
+
+          <div class="quiz-topic-feedback" id="quizTopicFeedback"></div>
+
+          <div class="quiz-review">
+            <h4>Revisão das perguntas</h4>
+            <p class="quiz-review-hint">Clique em cada pergunta para rever a explicação.</p>
+            <div id="quizReviewList"></div>
+          </div>
+
+          <div class="quiz-actions">
+            <button type="button" class="btn btn-primary" id="quizRestartBtn">Refazer neste nível</button>
+            <button type="button" class="btn btn-outline" id="quizChangeLevelBtn">Escolher outro nível</button>
+          </div>
         </div>
       </div>
     </div>
