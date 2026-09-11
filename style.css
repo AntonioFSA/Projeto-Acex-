@@ -924,6 +924,16 @@ section[id] {
   font-weight: 700;
 }
 
+.sources-list a {
+  color: var(--color-primary);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.sources-list a:hover {
+  color: var(--color-primary-dark);
+}
+
 .sources-note {
   color: var(--color-text-muted);
   font-style: italic;
